@@ -1,1 +1,45 @@
 Google Maps API easy to use with GVMaps jQuery Plugin
+
+Last Release
+
+		Version 0.93
+
+Features
+
+GVMaps works with Google Maps API Version 3.
+
+As a html property you can:
+
+    Select map type between normal, sattellite or hybrid. Eg.:
+
+    <div id="map" data-mapType="hybrid"></div>
+
+    Set latitude, longitude and zoom level. Eg.:
+
+    <div id="map" data-latitude="41.875696" data-longitude="-87.624207" data-zoom="11"></div>
+
+    Set query to search any place at map like this:
+
+    <div id="map" data-query="Av. Dr. Cardoso de Mello, São Paulo - SP" data-zoom="15"></div>
+
+    Set route like this:
+
+    <div id="map" data-from="Av. Dr. Cardoso de Mello, São Paulo - SP" data-to="Av. Ibirapuera, São Paulo - SP"></div>
+
+Using javascript plugin function you can:
+
+    Set query to search any place at map like this:
+
+    $('#map').gvmap().query('Santos - SP, Brazil')
+
+    Trace route like this:
+
+    $('#map').gvmap().route('Santos - SP, Brazil', 'São Paulo - SP, Brazil')
+
+    Change map position at runtime:
+
+    $('#map').gvmap().latLng(-23.961392, -46.391745)
+
+More Examples
+
+    Examples can be found at GVMaps Project Repository
