@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+        <title>JQuery and Google Maps</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script type="text/javascript" src="../gvmaps.js"></script>
+        <script type="text/javascript">            
+            $(function(){
+                $('#map').gvmap().auto()
+            })
+        </script>
+        <style type="text/css">
+        #map{
+            height:300px;
+            width:500px;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="map" data-from="Av. Dr. Cardoso de Mello, São Paulo - SP" data-to="Av. Ibirapuera, São Paulo - SP" data-panel="route-panel"></div>
+		<div id="route-panel"></div>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8" />
+		<title>GVMaps 3.0 beta</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script type="text/javascript" src="../gvmaps.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('#map').gvmap().center('São Paulo - SP - Brasil', function(gvmap){
+					gvmap.links('#subsidiary a')
+				})
+			})
+		</script>
+		<style type="text/css">
+		.map, .dynamic-map{
+			float:left;
+			height:300px;
+			margin:10px;
+			width:400px;
+		}
+		ul {
+			float:left;
+			list-style:none;
+			margin:0;
+		}
+		ul li{
+			margin:10px 0;
+		}
+		ul li a{
+			border:1px solid #ccc;
+			display:block;
+			color:#666;
+			padding:5px 10px;
+			text-indent:10px;
+			width:200px;
+		}
+		ul li a.gvmap-selected{
+			background:#efefef;
+		}
+		</style>
+	</head>
+	<body>
+		<!-- Default -->
+		<div id="map" class="map" data-zoom="11"></div>
+		<ul id="subsidiary">
+			<li><a href="#sede" data-query="Av. Paulista, São Paulo - SP">Sede</a></li>
+			<li><a href="#ibirapuera" data-query="Av. Ibirapuera, São Paulo - SP">Ibirapuera</a></li>
+			<li><a href="#noveDeJulho" data-query="Av. 9 de Julho, São Paulo - SP">Nove de Julho</a></li>
+		</ul>
+	</body>
+</html>

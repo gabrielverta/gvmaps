@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8" />
+		<title>GVMaps 3.0 beta</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script type="text/javascript" src="../gvmaps.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('.map').gvmap().auto()
+				$('#map1').gvmap().query('Av. Juscelino Kubitschek, Itaim Bibi - São Paulo - SP')
+				$('#map2').gvmap().route('Av. Juscelino Kubitschek, Itaim Bibi - São Paulo - SP', 'Av. Paulista - São Paulo - SP')
+				$('#map3').gvmap().latLng(-23.961784, -46.332092)
+				$('#draggable1').gvmap({draggable: true}).query('Av. Gomes de Carvalho - São Paulo - SP')
+				$('#draggable2').gvmap({draggable: true}).query('Av. Paulista - São Paulo - SP').ondrop = function(obj, mark){
+					var point = mark.getPosition()
+					var html = '<h2>Anywhere</h2><br/><strong>Latitude: </strong>' + point.lat()
+					html += '<br/>'
+					html += '<strong>Longitude: </strong>' + point.lng()
+					if("undefined" != obj.map.infowindow){
+			        	var infowindow = new google.maps.InfoWindow({
+					    	content: html
+						})
+						obj.map.infowindow = infowindow
+					}
+					obj.map.infowindow.open(obj.map, mark)
+				}
+			})
+		</script>
+		<style type="text/css">
+		.map, .dynamic-map{
+			height:300px;
+			margin:10px;
+			width:400px;
+		}
+		</style>
+	</head>
+	<body>
+		<!-- Default -->
+		<div class="map" data-placeholder="Cidade de São Paulo"></div>
+
+		<!-- Query -->
+		<div class="map" data-query="Av. Dr. Cardoso de Melo, São Paulo - SP" data-zoom="13" data-control="large" data-type="satellite"></div>
+
+		<!-- Latitude + Longitude -->
+		<div class="map" data-latitude="-23.961392" data-longitude="-46.391745" data-zoom="13" data-control="large" data-type="hybrid"></div>
+
+		<div id="first-map" class="map" data-from="Av. Dr. Cardoso de Melo, São Paulo - SP" data-to="Av. Paulista, São Paulo - SP" data-control="large" data-type="normal"></div>
+		
+		<div id="map1" class="dynamic-map"></div>
+
+		<div id="map2" class="dynamic-map"></div>
+
+		<div id="map3" class="dynamic-map"></div>
+
+		<!-- Query -->
+		<div class="map" data-query="Av. Dr. Cardoso de Melo, São Paulo - SP" data-zoom="13" data-control="large" data-type="satellite" data-placeholder="Cardoso"></div>
+
+		<div id="draggable1" class="dynamic-map"></div>
+
+		<div id="draggable2" class="dynamic-map"></div>
+
+	</body>
+</html>

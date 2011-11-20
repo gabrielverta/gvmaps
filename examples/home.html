@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8" />
+		<title>GVMaps 3.0 beta</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script type="text/javascript" src="../gvmaps.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('#map').gvmap().auto()
+			})
+		</script>
+		<style type="text/css">
+		#map{
+			height:300px;
+			margin:10px;
+			width:400px;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="map" data-query="Avenida Benedito de Lima, 99 - Rio Pequeno - sao paulo - sp"></div>
+	</body>
+</html>
